@@ -14,7 +14,9 @@
     <article>
         <div>
             {% for post in posts %}
-                <h3>{{ post.title }}</h3>
+                <h3>
+                    <a href="{{ url_for('get_post', post_id=post.id) }}">{{ post.title }}</a>
+                </h3>
                 <img src="{{ url_for('assets', path='images/stephen_chow.jpg') }}" alt="">
                 <small>{{ post.author }}</small>
                 <p>{{ post.content }}</p>
